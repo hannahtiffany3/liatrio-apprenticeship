@@ -1,11 +1,16 @@
 var express = require("express");
 var app = express();
+
 const timestamp = Date.now();
-const name = require("os").userInfo().username
+const uname = require("os").userInfo().username
+
+name = "My message is: " + uname,
+
+message = { "message" : name, "timestamp" : timestamp }
 
 
 app.get("/url", (req, res, next) => {
- res.send(["My name is", name, "timestamp", timestamp]);
+ res.send([message]);
 });
 
 app.listen(3000, () => {
