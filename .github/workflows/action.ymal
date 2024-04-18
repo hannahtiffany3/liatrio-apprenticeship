@@ -2,7 +2,10 @@ name: build
 
 on:
   push:
-    branches: [ main, endpoint, actions ]
+    branches:
+      - 'main'
+      - 'endpoint'
+      - 'actions'
 
 jobs:
   build:
