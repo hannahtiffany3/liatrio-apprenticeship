@@ -6,7 +6,7 @@ const uname = require("os").userInfo().username
 
 name = "My name is: " + uname
 
-message = { "Message" : name, "Timestamp" : timestamp }
+message = {"Message":name, "Timestamp":timestamp }
 
 
 app.get("/", (req, res, next) => {
