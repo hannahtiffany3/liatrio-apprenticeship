@@ -9,13 +9,6 @@ jobs:
     name: build
     runs-on: ubuntu-latest
     steps:
-      - name: run tests
-        uses: liatrio/github-actions/apprentice-action@master
-  docker:
-    name: docker
-    runs-on: ubuntu-latest
-    environment: Docker Config
-    steps:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Set up QEMU
@@ -32,3 +25,11 @@ jobs:
         with:
           push: true
           tags: app:latest
+  test:
+    name: build
+    needs: docker
+    runs-on: ubuntu-latest
+    steps:
+      - name: run tests
+        uses: liatrio/github-actions/apprentice-action@master
+
