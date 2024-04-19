@@ -26,8 +26,8 @@ jobs:
           push: true
           tags: app:latest
   test:
-    name: build
-    needs: docker
+    name: test
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: run tests
