@@ -6,11 +6,13 @@ on:
                 
 jobs:
   build:
+    name: build
     runs-on: ubuntu-latest
     steps:
       - name: run tests
         uses: liatrio/github-actions/apprentice-action@master
   docker:
+    name: docker
     runs-on: ubuntu-latest
     environment: Docker Config
     steps:
@@ -24,7 +26,7 @@ jobs:
         uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Build and push
         uses: docker/build-push-action@v5
         with:

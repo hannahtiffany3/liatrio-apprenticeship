@@ -1,18 +1,19 @@
 var express = require("express");
 var app = express();
 
-const timestamp = Date.now();
-const uname = require("os").userInfo().username
+const TIMESTAMP = Date.now();
+const UNAME = require("os").userInfo().username
 
-name = "My name is: " + uname
+name = "My name is: " + UNAME
 
-message = {"Message":name, "Timestamp":timestamp }
+message = {"Message":name , "Timestamp": TIMESTAMP }
 
 
 app.get("/", (req, res, next) => {
  res.send([message]);
 });
 
-app.listen(80, () => {
+app.listen(80, 'localhost', () => {
  console.log("Server running on port 80");
 });
+
