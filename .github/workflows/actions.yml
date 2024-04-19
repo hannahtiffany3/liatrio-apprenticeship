@@ -12,6 +12,7 @@ jobs:
         uses: liatrio/github-actions/apprentice-action@master
   docker:
     runs-on: ubuntu-latest
+    environment: Docker Config
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -23,7 +24,7 @@ jobs:
         uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
