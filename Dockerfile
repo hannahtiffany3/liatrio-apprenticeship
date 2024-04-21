@@ -9,6 +9,6 @@ COPY package.json .
 
 RUN npm install
 
-EXPOSE 3000
+EXPOSE 80
 
 CMD [ "node index.js" ]
