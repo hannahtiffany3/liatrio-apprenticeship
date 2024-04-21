@@ -25,7 +25,7 @@ jobs:
   test:
     name: test
     needs: build
-    runs-on: http://172.17.0.1:80
+    runs-on: 172.17.0.1:80
     steps:
       - name: run tests
         uses: liatrio/github-actions/apprentice-action@master
