@@ -13,7 +13,7 @@ app.get("/", (req, res, next) => {
  res.send([message]);
 });
 
-app.listen(80, '172.17.0.1', () => {
- console.log("Server running on port 80");
+app.listen(3000, 'localhost', () => {
+ console.log("Server running on port 3000");
 });
 

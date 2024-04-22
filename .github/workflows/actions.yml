@@ -21,11 +21,10 @@ jobs:
         with:
           push: true
           tags: hannahtiffany3/liatrio-apprenticeship:latest
-          #secrets: GIT_AUTH_TOKEN=${{ screts.GITHUB_TOKEN }}
   test:
     name: test
     needs: build
-    runs-on: 172.17.0.1:80
+    runs-on: ubuntu-latest
     steps:
       - name: run tests
         uses: liatrio/github-actions/apprentice-action@master
