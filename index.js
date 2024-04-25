@@ -1,7 +1,6 @@
 var express = require("express");
 var http = require('http');
 var app = express();
-//app.listen(3000)
 
 
 const TIMESTAMP = Date.now();
@@ -11,18 +10,19 @@ name = "My name is: " + UNAME
 
 message = {"Message":name , "Timestamp": TIMESTAMP }
 
-http.createServer(app).listen(80)
+http.createServer(app).listen(3000)
 
-app.listen = function() {
-	const server = http.createServer(this)
-	return server.listen.apply(server, arguments)
-}
 
 app.get("/", (req, res, next) => {
  res.send([message]);
 });
 
-app.listen(3000, 'localhost', () => {
- console.log("Server running on port 80");
+app.listen = (3000, 'localhost', function() {
+	console.log("Server running on port 3000")
+	const server = http.createServer(this)
+	return server.listen.apply(server, arguments)
 });
+//server.listen(80, 'localhost', () {
+// console.log("Server running on port 80");
+//});
 
