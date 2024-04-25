@@ -6,7 +6,7 @@ on:
                 
 jobs:
   build:
-    name: build
+    name: build and run
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -16,13 +16,15 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - name: Build and push
-        uses: docker/build-push-action@v5
+      - name: build
+        uses: docker/build-push-action@v2
         with:
-          context: .
-          file: ./Dockerfile
-          push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/liatrio-apprenticeship:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/liatiro-apprenticeship:latest
+          push: false 
+      - name: Run and push
+        uses: addnab/docker-run-action@v3
+        with:
+          image: ${{ secrets.DOCKERHUB_USERNAME }}/liatrio-apprenticeship:latest
   test:
     name: test
     needs: build
