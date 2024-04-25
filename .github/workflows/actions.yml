@@ -19,12 +19,12 @@ jobs:
       - name: build
         uses: docker/build-push-action@v5
         with:
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/liatiro-apprenticeship:latest
+          tags: latest
           push: false 
       - name: Run and push
         uses: addnab/docker-run-action@v3
         with:
-          image: ${{ secrets.DOCKERHUB_USERNAME }}/liatrio-apprenticeship:latest
+          image: latest
   test:
     name: test
     needs: build
