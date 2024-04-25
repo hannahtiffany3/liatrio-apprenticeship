@@ -19,8 +19,10 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
+          context: .
+          file: ./Dockerfile
           push: true
-          tags: hannahtiffany3/liatrio-apprenticeship:latest
+          tags: $${{ secrets.DOCKERHUB_USERNAME }}/liatrio-apprenticeship:latest
   test:
     name: test
     needs: build
