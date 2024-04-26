@@ -27,6 +27,7 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
           image: ${{ secrets.DOCKERHUB_USERNAME }}/liatrio-apprenticeship:latest
+          docker-network: 5ca6ffe8fb03
   test:
     name: test
     needs: build
