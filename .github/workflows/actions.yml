@@ -22,6 +22,7 @@ jobs:
           push: false 
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/liatrio-apprenticeship:latest
       - name: Run and push
+        ports: 3000:80
         uses: addnab/docker-run-action@v3
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
