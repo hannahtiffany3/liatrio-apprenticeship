@@ -25,7 +25,7 @@ jobs:
         uses: addnab/docker-run-action@v3
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
+          password: ${{ secrets.DOCKER_TOKEN }}
           image: ${{ secrets.DOCKERHUB_USERNAME }}/liatrio-apprenticeship:latest
           docker_network: e2a6a2d200e1
   test:
