@@ -29,7 +29,7 @@ jobs:
           #image: ${{ secrets.DOCKERHUB_USERNAME }}/liatrio-apprenticeship:latest
           #docker_network: e2a6a2d200e1
       - name: run
-        run: docker run -p 3000:80 -d ${{ secrets.DOCKERHUB_USERNAME }}/liatrio-apprenticeship:latest
+        run: docker run --publish 3000:80 -d ${{ secrets.DOCKERHUB_USERNAME }}/liatrio-apprenticeship:latest
       - name: push
         run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/liatrio-apprenticeship:latest
   test:
