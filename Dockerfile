@@ -1,7 +1,6 @@
 FROM node:18.20.2
 
 RUN mkdir -p /src/app
-RUN npm install express-generator -g
 
 WORKDIR /src/app
 
