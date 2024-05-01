@@ -4,12 +4,8 @@ var app = express();
 
 
 var TIMESTAMP = Date.now();
-TIMESTAMP.setDate(17);
-parseInt(TIMESTAMP);
-
 var UNAME = require("os").userInfo().username
 name = "My name is: " + UNAME
-name=name.toString();
 
 var message = {"message": name, "timestamp": TIMESTAMP}
 
