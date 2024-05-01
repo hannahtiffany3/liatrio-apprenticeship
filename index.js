@@ -3,11 +3,11 @@ var http = require('http');
 var app = express();
 
 
-const TIMESTAMP = new Date();
+const TIMESTAMP = Date.now();
 const UNAME = require("os").userInfo().username
 
 name = "My name is: " + UNAME
-message = {"Message": name , "Timestamp": TIMESTAMP }
+message = {"message": name , "timestamp": TIMESTAMP }
 
 http.createServer(app).listen(3000)
 
