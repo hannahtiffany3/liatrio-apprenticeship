@@ -5,10 +5,13 @@ var app = express();
 
 var TIMESTAMP = new Date();
 TIMESTAMP.setDate(17);
-var UNAME = require("os").userInfo().username
+parseInt(TIMESTAMP);
 
+var UNAME = require("os").userInfo().username
 name = "My name is: " + UNAME
-message = {"message": name , "timestamp": TIMESTAMP }
+name=name.toString();
+
+var message = {"message": name, "timestamp": TIMESTAMP}
 
 http.createServer(app).listen(3000)
 
