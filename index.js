@@ -3,7 +3,7 @@ var http = require('http');
 var app = express();
 
 
-var TIMESTAMP = new Date();
+var TIMESTAMP = Date.now();
 TIMESTAMP.setDate(17);
 parseInt(TIMESTAMP);
 
