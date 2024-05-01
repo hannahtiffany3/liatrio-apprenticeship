@@ -3,8 +3,9 @@ var http = require('http');
 var app = express();
 
 
-const TIMESTAMP = Date.now();
-const UNAME = require("os").userInfo().username
+var TIMESTAMP = new Date();
+TIMESTAMP.setDate(17);
+var UNAME = require("os").userInfo().username
 
 name = "My name is: " + UNAME
 message = {"message": name , "timestamp": TIMESTAMP }
