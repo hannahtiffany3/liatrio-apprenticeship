@@ -25,11 +25,6 @@ jobs:
         run: docker run -d --publish 80:3000 ${{ secrets.DOCKERHUB_USERNAME }}/liatrio-apprenticeship:latest
       - name: push
         run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/liatrio-apprenticeship:latest
-  test:
-    name: test
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
       - name: run tests
         uses: liatrio/github-actions/apprentice-action@master
      

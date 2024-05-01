@@ -3,7 +3,7 @@ var http = require('http');
 var app = express();
 
 
-const TIMESTAMP = Date.now();
+const TIMESTAMP = new Date();
 const UNAME = require("os").userInfo().username
 
 name = "My name is: " + UNAME
