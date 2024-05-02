@@ -3,16 +3,19 @@ var http = require('http');
 var app = express();
 
 
-const TIMESTAMP = Date.now();
-const UNAME = require("os").userInfo().username
+var timestamp = Date.now();
+var uname = require("os").userInfo().username
+name = "My name is: " + uname
 
-name = "My name is: " + UNAME
-message = {"Message": name , "Timestamp": TIMESTAMP }
 
 http.createServer(app).listen(3000)
 
 app.get("/", (req, res, next) => {
- res.send([message]);
+ res.json({
+	 Message: name,
+	 Timestamp: timestamp,
+	 Test: "Test"
+ });
 });
 
 app.listen = (3000, 'localhost', function() {

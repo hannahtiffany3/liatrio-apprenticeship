@@ -24,7 +24,7 @@ jobs:
       - name: run
         run: docker run -d --publish 80:3000 ${{ secrets.DOCKERHUB_USERNAME }}/liatrio-apprenticeship:latest
       - name: push
-        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/liatrio-apprenticeship:latest
+        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/liatrio-apprenticeship:lates
       - name: test
         uses: liatrio/github-actions/apprentice-action@master
      
