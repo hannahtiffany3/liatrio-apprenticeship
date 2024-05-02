@@ -5,7 +5,7 @@ var app = express();
 
 var timestamp = Date.now();
 var uname = require("os").userInfo().username
-name = "Hello, my name is: " + uname
+name = "My name is: " + uname
 
 
 http.createServer(app).listen(3000)
