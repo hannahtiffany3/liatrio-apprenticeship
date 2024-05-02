@@ -14,7 +14,6 @@ app.get("/", (req, res, next) => {
  res.json({
 	 Message: name,
 	 Timestamp: timestamp,
-	 Test: "Test"
  });
 });
 
