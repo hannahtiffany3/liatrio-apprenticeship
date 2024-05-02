@@ -13,8 +13,8 @@ http.createServer(app).listen(3000)
 
 app.get("/", (req, res, next) => {
  res.json({
-	 message: name
-	 timestamp: timestamp
+	 Message: name
+	 Timestamp: timestamp
  });
 });
 
